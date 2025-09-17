@@ -1,0 +1,34 @@
+.bg-sunrise{
+    background: linear-gradient(to bottom right, #1c2f49, #ff5f9d);
+}
+.bg-day{
+    background: linear-gradient(to bottom right, #658cc2, #1c2f49);
+}
+.bg-sunset{
+    background: linear-gradient(to bottom right, #30507e, #7e2648);
+}
+.bg-night{
+    background: linear-gradient(to bottom right, #1c2a44, #0d151f);
+}
+
+.app{
+    width: 100vw;
+    min-height: 100vh;
+     justify-content: center;
+     align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.card{
+    background: rgba(50, 50, 50, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(50, 50, 50, 0.3);
+    padding: 2.5rem;
+}

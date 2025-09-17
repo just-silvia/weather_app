@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { getWeatherData } from './api';
+import { getWeatherData } from './api/api';
 import SearchBar from './components/SearchBar';
 import CurrentWeather from './components/CurrentWeather';
 import HourlyForecast from './components/HourlyForecast';
@@ -20,12 +20,12 @@ function App() {
     return 'bg-night';
   }
 
-  const hour = weatherData?.location?.localtime
+  const hour = weatherData?.location?.localtime 
     ? parse(
       weatherData.location.localtime,
-      'yyyy-MM-dd  HH:mm',
-      : new Date().getHours();
-    )
+      'yyyy-MM-dd HH:mm',
+      new Date()
+    ).getHours()
     : new Date().getHours();
 
   const gradientClass = getGradientClass(hour);
@@ -41,7 +41,7 @@ function App() {
 
         setWeatherData({
           current: { ...data.current, mintemp_c, maxtemp_c },
-          hourly: data.forecast.forecastday[0],
+          hourly: data.forecast.forecastday[0].hour,
           weekly: data.forecast.forecastday.slice(1),
           location: data.location
         })
